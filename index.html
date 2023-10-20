@@ -5,11 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap" rel="stylesheet">
+
     <title>App - Lista de tarefas</title>
 </head>
-<body>
-    <header>
-        <img src="img/list-check-solid 1.svg" alt="">
+<body class="body-bg">
+    <header class="header-bg">
+        <div class="container header">
+            <img class="logo" src="img/list-check-solid 1.svg" alt="">
+        </div>
     </header>
+    <main>
+        <div class="container main">
+            <h1>Nova tarefa:</h1>
+            <div class="form">
+                <input type="text" id="nova-tarefa" placeholder="Ex: Pagar boleto">
+                <button class="btn">cadastrar</button>
+            </div>
+        </div>
+    </main>
+    <section class="tarefas container">
+        <div class="caixa">
+            <h1>Todas as tarefas</h1>
+            <ul>
+                <li>lavar o carro <span><img src="img/Vector.svg" alt=""></span></li>
+                <li>tirar o lixo</li>
+                <li>Pagar internet</li>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
