@@ -5,10 +5,22 @@ const localStorageKey = 'lista-de-tarefas';
 
 cadastrar.addEventListener('click', novaTask);
 
+function validarNovaTask() {
+    const values = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
+    let existe = values.find(item => item.name == inputCadastrar.value)
+    return !existe ? false : true;
+}
+
 function novaTask() {
     // validacao
     if (!inputCadastrar.value) {
+        inputCadastrar.style.border = '1px solid red'
         alert('Digite algo para inserir em sua lista')
+        inputCadastrar.focus()
+    }
+    else if (validarNovaTask()) {
+        alert('Já existe uma tarefa com essa descrição')
+        inputCadastrar.style.border = ''
     }
     else {
         const values = JSON.parse(localStorage.getItem(localStorageKey) || "[]");
@@ -17,6 +29,8 @@ function novaTask() {
         })
         localStorage.setItem(localStorageKey, JSON.stringify(values));
         mostrarNaTela();
+        inputCadastrar.style.border = '1px solid #4EC032'
+        inputCadastrar.value = '';
     }
 }
 
