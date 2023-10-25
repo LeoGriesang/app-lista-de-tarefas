@@ -89,6 +89,9 @@ input::placeholder {
 .caixa ul {
     margin-top: 40px;
 }
+#check {
+    cursor: pointer;
+}
 
 @media(max-width: 767px) {
     .header {
